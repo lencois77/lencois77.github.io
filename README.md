@@ -1,6 +1,6 @@
-# れんそいす | Developer Site
+# LENCOIS | Developer Site
 
-個人開発者「れんそいす」のポートフォリオ／プロダクト紹介サイトです。
+個人開発者「LENCOIS」のポートフォリオ／プロダクト紹介サイトです。
 フレームワークやビルドツールを使わない、素のHTML / CSS / JavaScriptの静的サイトです。
 
 公開URL（予定）: https://lencois77.github.io/
