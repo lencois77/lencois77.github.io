@@ -13,7 +13,7 @@
   const script = document.createElement('script');
   script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
   script.async = true;
-  script.onerror = () => { status.textContent = '認証を読み込めませんでした。メールでお問い合わせください。'; };
+  script.onerror = () => { status.textContent = '認証を読み込めませんでした。時間をおいて再読み込みしてください。'; };
   script.onload = () => {
     if (!window.turnstile) return;
     fields.disabled = false;
@@ -21,7 +21,7 @@
       sitekey: config.siteKey, action: 'contact', language: 'ja',
       callback: value => { token = value; update(); },
       'expired-callback': () => { token = ''; update(); status.textContent = '認証の有効期限が切れました。もう一度確認してください。'; },
-      'error-callback': () => { token = ''; update(); status.textContent = '認証に失敗しました。再確認するかメールでお問い合わせください。'; },
+      'error-callback': () => { token = ''; update(); status.textContent = '認証に失敗しました。時間をおいて再確認してください。'; },
     });
   };
   document.head.appendChild(script);
@@ -39,12 +39,12 @@
         credentials: 'omit', body: JSON.stringify({ ...payload, token }), signal: AbortSignal.timeout(20000),
       });
       const result = await response.json();
-      if (!response.ok || result.ok !== true) throw new Error(result.message || '送信に失敗しました。');
+      if (!response.ok || result.ok !== true) throw new Error(response.status === 503 ? '現在送信を完了できません。重複送信にご注意のうえ、時間をおいてお試しください。' : (result.message || '送信に失敗しました。'));
       completed = true; form.reset(); status.textContent = result.message;
       submit.textContent = '送信済み';
     } catch (error) {
       status.textContent = error.name === 'TimeoutError' || error.name === 'TypeError'
-        ? '送信の完了を確認できませんでした。再送で重複する場合があります。メールでもお問い合わせいただけます。'
+        ? '送信の完了を確認できませんでした。再送で重複する場合があります。時間をおいてご確認ください。'
         : error.message;
     } finally {
       sending = false; token = ''; fields.disabled = completed;
