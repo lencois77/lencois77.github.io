@@ -136,3 +136,7 @@ a.project-card:hover h3 { color: var(--color-link); text-decoration: underline; 
 .contact-submit { margin-top: 20px; padding: 12px 28px; background: var(--color-link); color: white; border: 0; border-radius: 999px; font: inherit; cursor: pointer; }
 .contact-submit:disabled { background: #e8e8e8; color: #656565; cursor: default; }
 #contact-status { font-size: 13px; margin-top: 18px; }
+
+.social-links { display: flex; flex-wrap: wrap; gap: 24px; padding-block: 24px; border-top: 1px solid var(--color-border); font-size: 13px; }
+.social-links a { color: var(--color-link); text-decoration: none; }
+.social-links a:hover { text-decoration: underline; }
