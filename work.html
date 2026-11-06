@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects | LENCOIS</title>
+  <title>Work | LENCOIS</title>
   <meta name="description" content="LENCOISが制作しているアプリ・プロダクトの一覧です。" />
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -11,14 +11,16 @@
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="wordmark" href="index.html">LENCOIS</a>
+      <a class="wordmark wordmark--logo" href="index.html" aria-label="LENCOIS ホーム">
+        <img src="assets/images/brand/lencois-logo.svg" alt="LENCOIS" width="566.93" height="127.56" />
+      </a>
       <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
         <span></span>
       </button>
       <nav class="site-nav">
         <a href="index.html">Home</a>
-        <a href="projects.html" aria-current="page">Projects</a>
-        <a href="about.html">About</a>
+        <a href="work.html" aria-current="page">Work</a>
+        <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -26,7 +28,7 @@
 
   <main>
     <div class="page-header container container--wide">
-      <h1>Projects</h1>
+      <h1>Work</h1>
       <p>LENCOISが個人で制作しているアプリ・プロダクトの一覧です。今後も少しずつ増えていく予定です。</p>
     </div>
 
@@ -42,8 +44,8 @@
     </div>
   </footer>
 
-  <script src="assets/js/projects-data.js"></script>
-  <script src="assets/js/projects-render.js"></script>
+  <script src="assets/js/projects-data.js?v=20261106"></script>
+  <script src="assets/js/projects-render.js?v=20261105"></script>
   <script>
     renderProjectList("#all-projects", { showDescription: true });
   </script>

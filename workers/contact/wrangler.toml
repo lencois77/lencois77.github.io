@@ -1,0 +1,13 @@
+name = "lencois-contact"
+main = "worker.mjs"
+compatibility_date = "2026-11-06"
+
+[vars]
+ALLOWED_ORIGINS = "https://lencois.dev"
+MAIL_FROM = "contact@lencois.dev"
+# Replace with your verified destination Gmail before deployment.
+MAIL_TO = "REPLACE_WITH_VERIFIED_GMAIL"
+
+[[send_email]]
+name = "MAILER"
+destination_address = "REPLACE_WITH_VERIFIED_GMAIL"

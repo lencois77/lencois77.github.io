@@ -6,19 +6,21 @@
   <title>Contact | LENCOIS</title>
   <meta name="description" content="LENCOISへの連絡先です。" />
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css?v=contact-product-20261106" />
 </head>
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="wordmark" href="index.html">LENCOIS</a>
+      <a class="wordmark wordmark--logo" href="index.html" aria-label="LENCOIS ホーム">
+        <img src="assets/images/brand/lencois-logo.svg" alt="LENCOIS" width="566.93" height="127.56" />
+      </a>
       <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
         <span></span>
       </button>
       <nav class="site-nav">
         <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="about.html">About</a>
+        <a href="work.html">Work</a>
+        <a href="blog.html">Blog</a>
         <a href="contact.html" aria-current="page">Contact</a>
       </nav>
     </div>
@@ -27,24 +29,43 @@
   <main>
     <div class="page-header container">
       <h1>Contact</h1>
-      <p>お問い合わせ、ご感想などはこちらまでお気軽にどうぞ。</p>
+      <p>アプリや作品についてのお問い合わせ、ご感想はこちらまで。</p>
     </div>
 
     <section class="container">
+      <form id="contact-form" class="contact-form" aria-describedby="contact-status contact-privacy">
+        <fieldset disabled>
+          <legend class="contact-form-title">お問い合わせフォーム</legend>
+          <label for="contact-name">お名前 <span>必須</span></label>
+          <input id="contact-name" name="name" autocomplete="name" maxlength="80" required />
+          <label for="contact-email">メールアドレス <span>必須</span></label>
+          <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required />
+          <label for="contact-product">お問い合わせ対象 <span>必須</span></label>
+          <select id="contact-product" name="product" required>
+            <option value="">選択してください</option>
+            <option value="digbox">DIGBOX</option>
+            <option value="other">その他</option>
+          </select>
+          <label for="contact-subject">件名 <span>必須</span></label>
+          <input id="contact-subject" name="subject" maxlength="120" required />
+          <label for="contact-message">お問い合わせ内容 <span>必須</span></label>
+          <textarea id="contact-message" name="message" rows="7" maxlength="5000" aria-describedby="contact-message-hint" required></textarea>
+          <p id="contact-message-hint" class="contact-note">5,000文字まで。不具合のご報告は、アプリ名・ご利用の端末・発生した状況を添えてください。</p>
+          <div class="contact-trap" aria-hidden="true"><label for="contact-website">Website</label><input id="contact-website" name="website" tabindex="-1" autocomplete="off" /></div>
+          <div id="contact-verification"></div>
+          <button class="contact-submit" type="submit" disabled>送信する</button>
+        </fieldset>
+        <p id="contact-status" role="status" aria-live="polite">フォームは準備中です。現在は下記のメールアドレスへお問い合わせください。</p>
+        <noscript><p>フォームを利用するにはJavaScriptが必要です。メールからもお問い合わせいただけます。</p></noscript>
+        <p id="contact-privacy" class="contact-note">入力内容はお問い合わせへの対応に使用します。送信・迷惑投稿対策にCloudflareを利用し、内容は管理者のメールへ届きます。パスワードや決済情報は入力しないでください。</p>
+      </form>
       <div class="contact-card" style="margin-bottom: var(--space-6);">
-        <!-- 実際のメールアドレスに差し替えてください -->
         <div class="contact-item">
           <span class="contact-item__label">Email</span>
           <a class="contact-item__value" href="mailto:contact@lencois.dev">contact@lencois.dev</a>
         </div>
 
-        <!-- 将来的にSNS等を追加する場合はここに contact-item を追加する -->
-        <!--
-        <div class="contact-item">
-          <span class="contact-item__label">X (Twitter)</span>
-          <a class="contact-item__value" href="https://x.com/xxxxx" target="_blank" rel="noopener">@xxxxx</a>
-        </div>
-        -->
+        <p class="contact-note">不具合のご報告は、アプリ名・ご利用の端末・発生した状況を添えていただけると助かります。</p>
       </div>
     </section>
   </main>
@@ -56,6 +77,8 @@
     </div>
   </footer>
 
+  <script src="assets/js/contact-config.js?v=20261106-connected"></script>
+  <script src="assets/js/contact.js?v=product-20261106"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

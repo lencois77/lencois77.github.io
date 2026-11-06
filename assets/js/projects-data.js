@@ -11,7 +11,7 @@ const PROJECTS = [
     tagline: "音楽コレクションを整理・管理するためのアプリ",
     description:
       "レコードやCD、デジタル音源など、増え続ける音楽コレクションをシンプルに整理・管理できるアプリです。",
-    image: null, // 例: "assets/images/projects/digbox/cover.png"
+    image: "assets/images/projects/digbox/icon.png",
     status: "開発中",
     links: {
       appStore: null,

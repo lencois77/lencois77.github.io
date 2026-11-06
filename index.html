@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LENCOIS | Independent Developer</title>
+  <title>LENCOIS</title>
   <meta name="description" content="LENCOISは、自分が欲しいと思ったものを自分で作る個人開発者です。現在はDigBoxをはじめとするアプリ・プロダクトを制作しています。" />
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -11,14 +11,16 @@
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="wordmark" href="index.html">LENCOIS</a>
+      <a class="wordmark wordmark--logo" href="index.html" aria-label="LENCOIS ホーム">
+        <img src="assets/images/brand/lencois-logo.svg" alt="LENCOIS" width="566.93" height="127.56" />
+      </a>
       <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
         <span></span>
       </button>
       <nav class="site-nav">
         <a href="index.html" aria-current="page">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="about.html">About</a>
+        <a href="work.html">Work</a>
+        <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -27,13 +29,11 @@
   <main>
     <section class="hero">
       <div class="container">
-        <p class="hero__eyebrow">Independent Developer</p>
-        <h1>自分が欲しいものを、つくる。</h1>
         <p class="hero__lead">
           個人開発者の、LENCOISです。<br />
           自分で使いたいと思えるアプリを、少しずつ形にしています。
         </p>
-        <a class="btn btn--primary" href="projects.html">制作しているもの</a>
+        <a class="btn btn--primary" href="work.html">制作しているもの</a>
       </div>
     </section>
 
@@ -55,8 +55,8 @@
     </div>
   </footer>
 
-  <script src="assets/js/projects-data.js"></script>
-  <script src="assets/js/projects-render.js"></script>
+  <script src="assets/js/projects-data.js?v=20261106"></script>
+  <script src="assets/js/projects-render.js?v=20261105"></script>
   <script>
     renderProjectList("#featured-projects", { showDescription: false });
   </script>

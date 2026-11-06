@@ -1,6 +1,6 @@
 /**
  * PROJECTS配列からプロダクトカードのHTMLを生成する共通処理。
- * Home（注目プロダクト）とProjects（一覧）の両方から呼び出す。
+ * Home（注目プロダクト）とWork（一覧）の両方から呼び出す。
  */
 function createProjectCard(project, { showDescription = false } = {}) {
   const card = document.createElement(project.links.detail ? "a" : "div");
@@ -48,6 +48,13 @@ function createProjectCard(project, { showDescription = false } = {}) {
     status.className = "project-card__status";
     status.textContent = project.status;
     body.appendChild(status);
+  }
+
+  if (project.links.detail) {
+    const linkLabel = document.createElement("span");
+    linkLabel.className = "project-card__link";
+    linkLabel.textContent = "製品サイトを見る ↗";
+    body.appendChild(linkLabel);
   }
 
   card.appendChild(body);
