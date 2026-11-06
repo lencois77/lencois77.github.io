@@ -7,6 +7,7 @@ out = root / '_site'
 if out.exists():
     shutil.rmtree(out)
 out.mkdir()
+(out / '.nojekyll').touch()
 for name in ('index.html', 'work.html', 'blog.html', 'contact.html', '.nojekyll', 'CNAME'):
     source = root / name
     if source.is_file():

@@ -1,0 +1,8 @@
+# Safety for repositories still using branch-based GitHub Pages publication.
+exclude:
+  - digbox
+  - workers
+  - scripts
+  - README.md
+  - blog/README.md
+  - _site
